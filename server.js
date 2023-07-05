@@ -15,7 +15,7 @@ const connect = require('./config/connectDB')
 connect()
 
 // create PORT
-const PORT = process.env.PORT || 7666
+const PORT = process.env.PORT || 5000
 
 // listen to the port
 app.listen(PORT, (err)=> {
@@ -28,9 +28,7 @@ app.use('/api/products', require('./routes/productRoute'))
 
 app.use('/api/user', require('./routes/userRoute'))
 
-app.use("*", (req, res) => {
-    res.send("404 - PAGE NOT FOUND");
-  });
+
 
 app.use((req,res)=>{
     res.send("API is running ...")
